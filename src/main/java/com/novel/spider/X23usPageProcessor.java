@@ -118,8 +118,8 @@ public class X23usPageProcessor implements PageProcessor {
      * @param page
      */
     public void processCatelogPage(Page page) {
-        page.putField("type", "catelog");
         page.addTargetRequests(page.getHtml().xpath("//table[@id='at']").links().all());
+	page.setSkip(true);
     }
 
     /**
